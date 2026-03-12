@@ -6,38 +6,36 @@ import Image from 'react-bootstrap/Image';
 
 const SlothHeader = () => {
     return (
-        <Navbar expand="lg" className='bg-body-transparent'>
-            <Container>
-                <Navbar.Brand href="#home">
-                    <Image
-                        src={sleepySloth}
-                        roundedCircle
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top rounded-circle"
-                        alt="Sloth Logo"
-                        style={{ objectFit: 'cover', borderRadius: '50%' }}
-                    />
-                    The Tranquil Sloth
-                </Navbar.Brand>
-                <Nav className="justify-content-end" activeKey="/">
-                    <Nav.Item>
-                        <Nav.Link href="/">Home</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="/mind">Mind</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="/body">Body</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="/heart">Heart</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="/soul">Soul</Nav.Link>
-                    </Nav.Item>
-                </Nav>
-            </Container>
+        <Navbar sticky="top" className='justify-content-end'>
+            <Navbar.Brand href="/">
+                <Image
+                    src={sleepySloth}
+                    roundedCircle
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top rounded-circle"
+                    alt="Sloth Logo"
+                    style={{ objectFit: 'cover', borderRadius: '50%' }}
+                />
+                The Tranquil Sloth
+            </Navbar.Brand>
+            <Nav variant='tabs' defaultActiveKey="/">
+                <Nav.Item>
+                    <Nav.Link href="/">Home</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link eventKey="/mind">Mind</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link eventKey="/body">Body</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link eventKey="/heart">Heart</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link eventKey="/soul">Soul</Nav.Link>
+                </Nav.Item>
+            </Nav>            
         </Navbar>
     );
 };
